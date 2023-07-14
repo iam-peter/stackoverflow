@@ -2,10 +2,12 @@ import QtQuick 2.15
 import QtQuick.Controls 2.15
 import QtCharts 2.15
 
-ChartView {
+PolarChartView {
     id: chart
+    title: "Some Polar Area Series"
     width: 640
     height: 480
+    legend.visible: false
     antialiasing: true
 
     ToolTip {
@@ -13,26 +15,56 @@ ChartView {
         visible: false
     }
 
-    ScatterSeries {
-        id: scatter
-        name: "Scatter"
-        axisX: ValueAxis { min: 1; max: 3 }
-        axisY: ValueAxis { min: 1; max: 2.5 }
+    ValueAxis { id: axis1 }
+    ValueAxis { id: axis2 }
 
-        XYPoint { x: 1.5; y: 1.5 }
-        XYPoint { x: 1.5; y: 1.6 }
-        XYPoint { x: 1.57; y: 1.55 }
-        XYPoint { x: 1.8; y: 1.8 }
-        XYPoint { x: 1.9; y: 1.6 }
-        XYPoint { x: 2.1; y: 1.3 }
-        XYPoint { x: 2.5; y: 2.1 }
+    LineSeries {
+        id: lowerLine
+        axisAngular: axis1
+        axisRadial: axis2
+
+        // Please note that month in JavaScript months are zero based, so 2 means March
+        XYPoint { x: 0;  y: 15 }
+        XYPoint { x: 2;  y: 35 }
+        XYPoint { x: 3;  y: 50 }
+        XYPoint { x: 5;  y: 75 }
+        XYPoint { x: 6;  y: 102 }
+        XYPoint { x: 9;  y: 132 }
+        XYPoint { x: 10;  y: 100 }
+        XYPoint { x: 12;  y: 120 }
+        XYPoint { x: 16;  y: 140 }
+        XYPoint { x: 20;  y: 150 }
+    }
+    LineSeries {
+        id: upperLine
+        axisAngular: axis1
+        axisRadial: axis2
+
+        // Please note that month in JavaScript months are zero based, so 2 means March
+        XYPoint { x: 0; y: 30 }
+        XYPoint { x: 2; y: 55 }
+        XYPoint { x: 3; y: 80 }
+        XYPoint { x: 5; y: 105 }
+        XYPoint { x: 6; y: 125 }
+        XYPoint { x: 9; y: 160 }
+        XYPoint { x: 10; y: 140 }
+        XYPoint { x: 12; y: 140 }
+        XYPoint { x: 16; y: 170 }
+        XYPoint { x: 20; y: 200 }
 
         onHovered: function(point, state) {
             toolTip.text = point.x + ", " + point.y
             toolTip.visible = state
-            let p = chart.mapToPosition(point, scatter)
+            let p = chart.mapToPosition(point, upperLine)
             toolTip.x = p.x
             toolTip.y = p.y - toolTip.height
         }
+    }
+
+    AreaSeries {
+        axisAngular: axis1
+        axisRadial: axis2
+        lowerSeries: lowerLine
+        upperSeries: upperLine
     }
 }
