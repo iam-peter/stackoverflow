@@ -5,7 +5,7 @@ Item {
     width: 800
     height: 200
 
-    ChartView{
+    ChartView {
         id: dataChartView
         animationOptions: ChartView.NoAnimation
         antialiasing: true
