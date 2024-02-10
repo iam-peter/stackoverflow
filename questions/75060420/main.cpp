@@ -66,7 +66,7 @@ int main(int argc, char *argv[])
 
     TranslationTest translationTest(&view);
 
-    const QUrl url(u"qrc:/75060420/main.qml"_qs);
+    const QUrl url(u"qrc:/Demo75060420/main.qml"_qs);
     QObject::connect(view.engine(), &QQmlEngine::quit, &view, &QWindow::close);
     view.setTitle(QStringLiteral("QML Translate"));
     view.rootContext()->setContextProperty("translationTest", (QObject *) &translationTest);

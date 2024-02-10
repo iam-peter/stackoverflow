@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
     QObject::connect(view.engine(), &QQmlEngine::quit, &view, &QWindow::close);
     view.rootContext()->setContextProperty("dataModel", &dataModel);
     view.setTitle(QStringLiteral("QML Chart"));
-    view.setSource(QUrl(u"qrc:/75032636/main.qml"_qs));
+    view.setSource(QUrl(u"qrc:/Demo75032636/main.qml"_qs));
     view.setResizeMode(QQuickView::SizeRootObjectToView);
     view.show();
 

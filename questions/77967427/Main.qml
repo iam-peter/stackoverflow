@@ -1,6 +1,6 @@
 import QtQuick
 import FooBar
-import Test
+import Demo77967427
 
 Window {
     id: root
@@ -18,7 +18,7 @@ Window {
         spacing: 10
         orientation: ListView.Vertical
 
-        model: root.myModel // this doesn't show anything in the listview
+        model: root.myModel
 
         delegate: Item {
             id: myItem
@@ -28,7 +28,7 @@ Window {
             height: label.height
             Text {
                 id: label
-                text: myItem.name // modelData.name
+                text: myItem.name
                 font.pointSize: 24
             }
         }
@@ -39,7 +39,7 @@ Window {
             font.pointSize: 48
             font.bold: true
 
-            text: Backend.header // This works as expected
+            text: Backend.header
         }
     }
 }

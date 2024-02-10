@@ -8,14 +8,11 @@ class DataObject : public QObject
 {
     QML_ELEMENT
     Q_OBJECT
-    Q_PROPERTY(QString name READ name WRITE setName NOTIFY nameChanged)
+    Q_PROPERTY(QString name MEMBER m_name NOTIFY nameChanged)
 
 public:
     DataObject(QObject *parent = nullptr);
     DataObject(QString name, QObject *parent = nullptr);
-
-    QString name() const;
-    void setName(const QString &name);
 
 signals:
     void nameChanged();

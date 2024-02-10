@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
     MyClass::registerTypes();
     engine.rootContext()->setContextProperty("myClass", &mc);
 
-    const QUrl url(u"qrc:/77687596/Main.qml"_qs);
+    const QUrl url(u"qrc:/Demo77687596/Main.qml"_qs);
     QObject::connect(
         &engine,
         &QQmlApplicationEngine::objectCreationFailed,

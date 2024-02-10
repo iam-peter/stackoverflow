@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
         return new Backend();
     });
 
-    const QUrl url(u"qrc:/qt/qml/Test/Main.qml"_qs);
+    const QUrl url(u"qrc:/qt/qml/Demo77967427/Main.qml"_qs);
     QObject::connect(
         &engine,
         &QQmlApplicationEngine::objectCreationFailed,

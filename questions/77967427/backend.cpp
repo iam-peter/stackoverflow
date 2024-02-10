@@ -15,8 +15,3 @@ Backend::~Backend()
     for (QObject *item : m_model)
         delete item;
 }
-
-QList<QObject *> Backend::model()
-{
-    return m_model;
-}
