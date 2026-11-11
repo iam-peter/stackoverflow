@@ -14,14 +14,10 @@ int main(int argc, char *argv[])
         return new Backend();
     });
 
-    const QUrl url(u"qrc:/qt/qml/Demo77967427/Main.qml"_qs);
-    QObject::connect(
-        &engine,
-        &QQmlApplicationEngine::objectCreationFailed,
-        &app,
-        []() { QCoreApplication::exit(-1); },
-        Qt::QueuedConnection);
-    engine.load(url);
+    QObject::connect(&engine, &QQmlApplicationEngine::objectCreationFailed,
+                     &app, []() { QCoreApplication::exit(-1); },
+                     Qt::QueuedConnection);
+    engine.loadFromModule("Demo77967427", "Main");
 
     return app.exec();
 }

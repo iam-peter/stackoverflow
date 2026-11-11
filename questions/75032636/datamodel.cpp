@@ -1,7 +1,7 @@
 #include "datamodel.h"
 #include <QSize>
 
-DataModel::DataModel() : m_data(), m_xMin(0), m_xMax(0) {}
+DataModel::DataModel() = default;
 
 int DataModel::rowCount(const QModelIndex &parent) const
 {

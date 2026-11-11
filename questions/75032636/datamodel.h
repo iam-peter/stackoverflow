@@ -37,8 +37,6 @@ signals:
 
 private:
     QVector<QPointF> m_data;
-    int m_xMin;
-    int m_xMax;
 };
 
 #endif // DATAMODEL_H

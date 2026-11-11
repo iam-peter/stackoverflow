@@ -2,7 +2,9 @@
 #define BACKEND_H
 
 #include <QObject>
-#include <dataobject.h>
+#include <QtQmlIntegration/qqmlintegration.h>
+
+#include "dataobject.h"
 
 class Backend : public QObject
 {

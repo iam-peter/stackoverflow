@@ -45,7 +45,7 @@ signals:
 private:
     void loadLanguage(const QLocale &locale)
     {
-        if (m_translator.load(locale, QLatin1String("locale"), QLatin1String("_")))
+        if (m_translator.load(locale, QLatin1String("locale"), QLatin1String("_"), QLatin1String(":/i18n")))
             qDebug() << "Language" << locale.language() << "loaded.";
         else
             qDebug() << "Couldn't load language.";
@@ -66,7 +66,7 @@ int main(int argc, char *argv[])
 
     TranslationTest translationTest(&view);
 
-    const QUrl url(u"qrc:/Demo75060420/main.qml"_qs);
+    const QUrl url(QStringLiteral("qrc:/qt/qml/Demo75060420/Main.qml"));
     QObject::connect(view.engine(), &QQmlEngine::quit, &view, &QWindow::close);
     view.setTitle(QStringLiteral("QML Translate"));
     view.rootContext()->setContextProperty("translationTest", (QObject *) &translationTest);

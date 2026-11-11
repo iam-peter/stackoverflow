@@ -1,6 +1,6 @@
 #include "matdata.h"
 
-#include "opencv2/opencv.hpp"
+#include <opencv2/opencv.hpp>
 
 MatData::MatData(QObject *parent)
     : QSurfaceDataProxy(parent)

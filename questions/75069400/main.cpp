@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
 {
     QGuiApplication app(argc, argv);
 
-    QQuickView view(QUrl(u"qrc:/Demo75069400/main.qml"_qs));
+    QQuickView view(QUrl(QStringLiteral("qrc:/qt/qml/Demo75069400/Main.qml")));
     view.show();
 
     QObject *item = view.rootObject();

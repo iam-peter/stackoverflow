@@ -2,7 +2,7 @@
 #define DATAOBJECT_H
 
 #include <QObject>
-#include "qqmlintegration.h"
+#include <QtQmlIntegration/qqmlintegration.h>
 
 class DataObject : public QObject
 {

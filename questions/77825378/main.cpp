@@ -1,7 +1,7 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
 
-#include <matdata.h>
+#include "matdata.h"
 
 int main(int argc, char *argv[])
 {

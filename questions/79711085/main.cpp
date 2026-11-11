@@ -43,11 +43,13 @@
 
 int main(int argc, char *argv[])
 {
-    QGuiApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
     QGuiApplication app(argc, argv);
 
     QQmlApplicationEngine engine;
-    engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
+    QObject::connect(&engine, &QQmlApplicationEngine::objectCreationFailed,
+                     &app, []() { QCoreApplication::exit(-1); },
+                     Qt::QueuedConnection);
+    engine.loadFromModule("Demo79711085", "Main");
 
     return app.exec();
 }

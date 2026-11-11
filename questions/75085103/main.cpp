@@ -21,7 +21,7 @@ int main(int argc, char *argv[])
 
     ApplicationData data;
     view.rootContext()->setContextProperty("applicationData", &data);
-    view.setSource(QUrl(u"qrc:/Demo75085103/main.qml"_qs));
+    view.setSource(QUrl(QStringLiteral("qrc:/qt/qml/Demo75085103/Main.qml")));
     view.show();
 
     return app.exec();
