@@ -5,6 +5,8 @@ Small, self-contained Qt/QML projects behind my answers on
 question ID and has a README with a summary of the question, my answer, and how to
 build the code.
 
+![Screenshots of four answers: a 3D surface from a cv::Mat (77825378), images and gradients blended with a vertical fade (75623151), a rolling LineSeries fed by a C++ model (75032636) and a rotary knob (75081127)](docs/showcase.png)
+
 | Folder | Question | Topic | Qt | Accepted |
 | --- | --- | --- | --- | :---: |
 | [74885512](questions/74885512) | [Qt Select At Most 1 Marker on Map](https://stackoverflow.com/questions/74885512/qt-select-at-most-1-marker-on-map) | Single selection for map markers (ListModel role, index property, ItemSelectionModel) | 6.5 | ✓ |
